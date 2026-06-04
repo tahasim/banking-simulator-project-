@@ -1,0 +1,82 @@
+TISU BANK ATM SIMULATOR - FEATURES
+==================================
+
+1. Secure Login
+   - Users log in using an account number and PIN.
+   - PINs are protected using salted PBKDF2 hashes.
+   - Login is temporarily locked after three failed attempts.
+   - Includes two demonstration accounts.
+
+2. New Account Signup
+   - Asks the user for their full name.
+   - Generates a unique eight-digit account number.
+   - Requires and confirms a four-digit PIN.
+   - Supports an optional opening deposit.
+
+3. Account Dashboard
+   - Displays the user's name.
+   - Displays an initials avatar and phone number.
+   - Displays the user's current account balance.
+   - Provides easy access to all ATM operations.
+
+4. Profile and Settings
+   - Users can update their validated full name and unique phone number.
+   - Phone numbers are normalized and can be used for exact recipient lookup.
+   - Users can change their PIN after confirming the current PIN.
+   - Profile and PIN changes roll back when secure persistence fails.
+
+5. Deposit Money
+   - Users can deposit money into their account.
+   - The account balance updates immediately.
+   - Invalid and negative amounts are rejected.
+   - Uses exact integer-cent arithmetic.
+
+6. Withdraw Money
+   - Users can withdraw money from their account.
+   - Withdrawals greater than the available balance are rejected.
+   - The account balance updates immediately.
+
+7. Transfer Money
+   - Users can transfer money to another account.
+   - Recipients can be found by exact account number or phone number.
+   - Shows recent and favorite recipients without exposing every account.
+   - Transfers update both account balances.
+   - Invalid accounts and insufficient funds are detected.
+   - Shows a review screen before committing the transfer.
+
+8. Transaction History
+   - Records deposits, withdrawals, and transfers.
+   - Displays the date and time of each transaction.
+   - Shows the newest transactions first.
+   - Supports search filtering and copyable transaction receipts.
+   - Stores masked counterparty details for transfers.
+
+9. Persistent Data Storage
+   - The complete local database is encrypted using Windows DPAPI.
+   - Atomic writes and encrypted backups protect against incomplete saves.
+   - Saved information remains available after restarting the program.
+   - Automatically upgrades plaintext and encrypted version-2 databases to version 3.
+
+10. Improved Native Graphical User Interface
+   - Built in C++ using the Windows API.
+   - Includes loading, login, signup, dashboard, profile, recipient, review, recovery, and history screens.
+   - Uses the planner-inspired Tisu Bank indigo, cream, and pale-surface theme.
+   - Includes an original cream-on-indigo Tisu Bank logo.
+   - Uses serif display headings, thin indigo borders, cards, and rounded controls.
+   - Uses visible keyboard focus and Enter/Escape shortcuts.
+
+11. Input Validation
+   - Rejects non-numeric and non-positive amounts.
+   - Validates names, account numbers, PINs, and opening deposits.
+   - Validates and uniquely indexes normalized phone numbers.
+   - Prevents transfers to the same account.
+   - Displays helpful error messages without crashing.
+
+DEMONSTRATION ACCOUNTS
+======================
+
+Account Number: 1001
+PIN: 1234
+
+Account Number: 1002
+PIN: 5678

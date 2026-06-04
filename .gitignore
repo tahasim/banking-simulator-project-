@@ -1,0 +1,27 @@
+# Build output
+build/
+build*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.exe
+*.a
+*.o
+*.obj
+*.obj.d
+
+# Runtime account data
+accounts.db
+accounts.db.*
+*_accounts.db
+*_accounts.db.*
+
+# Editors and operating system
+.vscode/
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
